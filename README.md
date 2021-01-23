@@ -5,13 +5,9 @@ You can see the deployment of ths application here
 
 https://todo-zeel.herokuapp.com/
 
-Logic I have used
+You can add upto 100 todo at a time.
 
-
-->So here I have used chrome's LocalStorage,
-but the algorithm I have developed is to make the string length as key, so the problem which arises is that, anything of same length added than the previous one get over write and can not be loaded at the time of refresh.
-
--> So I am thinking of making a new logic for the key , to avoid above problem.
+Looking for help, for changing the UI, if anyone up, feel free to commit.
 
 -> If you come up with Any idea than don't hesitate to contribute.
 
