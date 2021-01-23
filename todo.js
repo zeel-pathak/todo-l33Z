@@ -42,9 +42,19 @@ function addItem() {
         return false;
         //Add a p tag and assign a value of "Enter your todo"
     } else {
+        var i = 0 
+        for( i = 0; ; i++){
+//            console.log("inside loop")
+            if(localStorage.getItem(i) == null ){
+//                console.log("Inside if condition")
+                localStorage.setItem(i, item);
+                break;
+            }
+                
+        }
         
-        localStorage.setItem(item.length , item);
-        localStorage.getItem(4);
+//        localStorage.setItem(item.length , item);
+//        localStorage.getItem(4);
         
         
         //create li
@@ -79,20 +89,28 @@ function removeItem() {
     // console.log('Remove button is clicked');
 //    labe
     li = ul.children
-    console.log(li);
+//    console.log(li);
     
     
     // console.log(li);
     for (let index = 0; index < li.length; index++) {
 //        remo
     //     const element = li[index];
+        console.log("Inside for loop")
     //    console.log(element); 
         while (li[index] && li[index].children[0].checked) {
             var zeel = li[index].children[1]
+            for(let j = 0; ; j++){
+                console.log("Inside remove loop")
+                if(localStorage.getItem(j) == zeel.textContent){
+                    localStorage.removeItem(j);
+                    ul.removeChild(li[index])
+                    break;
+                }
+            }
+//            localStorage.removeItem(zeel.textContent.length)
             
-            localStorage.removeItem(zeel.textContent.length)
-            
-            ul.removeChild(li[index])
+//            ul.removeChild(li[index])
             
             
         }
@@ -106,7 +124,7 @@ function removeItem() {
 
 
 function refresh(){
-    for(var i = 1; i<=100; i++){
+    for(var i = 0; i<=100; i++){
     var refreshItem = localStorage.getItem(i);
     if(refreshItem === null){
         continue;
